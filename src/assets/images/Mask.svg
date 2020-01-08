@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="955px" height="1024px" viewBox="0 0 955 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="93.3977127%" y1="100%" x2="9.52299741%" y2="-38.296185%" id="linearGradient-1">
+            <stop stop-color="#0A0B47" offset="0%"></stop>
+            <stop stop-color="#18295A" offset="32.0744454%"></stop>
+            <stop stop-color="#05F3CE" offset="100%"></stop>
+        </linearGradient>
+        <path d="M217.881108,0 L954.931214,0 L954.931214,1024 L0.931213773,1024 C84.3357852,853.913978 143.381239,683.580645 178.067574,513 C212.753909,342.419355 226.025087,171.419355 217.881108,0 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+        </mask>
+        <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+    </g>
+</svg>

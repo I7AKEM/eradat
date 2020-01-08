@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+.home-page {
+  background: #0E0F32;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  direction: rtl;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: url('./assets/images/background.png') no-repeat;
+  background-size: cover;
+  width: calc(100vw - 600px);
+  animation: bluring 1s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3em;
+  animation: slideInRight 0.5s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.right>div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.right .content {
+  height: 100%;
+  background: url("./assets/images/Mask.svg") no-repeat;
+  background-size: cover;
+  -webkit-filter: drop-shadow(-5px 0px 70px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(-5px 0px 70px rgba(0, 0, 0, 0.5));
+  z-index: 2;
+}
+
+.right .content-border {
+  height: 100%;
+  background: url("./assets/images/Mask1.svg") no-repeat;
+  background-size: cover;
+  -webkit-filter: drop-shadow(-5px 0px 70px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(-5px 0px 70px rgba(0, 0, 0, 0.5));
+  left: -57px;
+  z-index: 1;
+  animation-duration: 0.5s;
+}
+
+.right .content-border-1 {
+  height: 100%;
+  background: url("./assets/images/Mask1.svg") no-repeat;
+  background-size: cover;
+  -webkit-filter: drop-shadow(-5px 0px 70px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(-5px 0px 70px rgba(0, 0, 0, 0.5));
+  transform: rotate(4deg);
+  height: 115%;
+  top: -63px;
+  left: -104px;
+  z-index: 0;
+  animation-duration: 0.7s;
+}
+
+.right .logo {
+  background: url("./assets/images/logo-eradat.svg") no-repeat;
+  background-size: 260px;
+  position: relative;
+  z-index: 4;
+  width: 260px;
+  height: 92px;
+  margin-bottom: 1em;
+}
+.right .logo,
+.right .description {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
+.right .description {
+  animation-delay: 0.6s;
+}
+
+.right .description,
+.right .sectors {
+  position: relative;
+  z-index: 4;
+  width: 70%;
+}
+
+.right .description,
+.right .sectors a {
+  text-decoration: none !important;
+}
+
+.right .sectors {
+  margin-top: 4em;
+}
+
+.right .sectors ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.right .sectors ul li{
+  margin-left: 4em;
+}
+
+.right .sectors .sector {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 90px;
+}
+
+.right .sectors .sector .sector-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid #05F3CE;
+  margin-bottom: 10px;
+}
+
+.right .sectors .sector .sector-icon i {
+  color: white !important;
+  font-size: 36px;
+}
+
+.right footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
   color: white;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.30) 100%);
+  height: 60px;
+  animation: slideIn 1s ease ;
 }
 
-.App-link {
-  color: #61dafb;
+.right footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: calc(100% - 40px);
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
+.right footer ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.right footer .divider {
+  height: 20px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 14px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
   from {
-    transform: rotate(0deg);
+    /* opacity: 0; */
+    max-width: 0;
+    overflow: hidden;
+    transform: rotate(2deg);
   }
   to {
-    transform: rotate(360deg);
+    /* opacity: 1; */
+    max-width: 1000px;
+    overflow: initial;
+    transform: rotate(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+  }
+}
+
+@keyframes bluring {
+  0% {
+    -webkit-filter: blur(20px);
+    transform: scale(2);
+    opacity: 0;
+  }
+  50%{
+    transform: scale(1);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    opacity: 1;
   }
 }
